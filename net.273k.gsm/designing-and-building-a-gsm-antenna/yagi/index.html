@@ -1,0 +1,307 @@
+
+<!-- saved from url=(0062) -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Yagi Design</title>
+<style type="text/css"></style></head>
+<body bgcolor="#FFFFFF">
+	<h1>Yagi Design</h1>
+<div style="float: right;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-2911513822197842";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+//2007-07-02: 273k gsm widesky
+google_ad_channel = "8009354766";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+	<center><a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/">Back to Designing and building a GSM antenna</a> - <a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/monopole/">Monopole Design</a></center>
+
+<!--
+	<h3>Note</h3>
+	<p>
+		Turns out I made a small error when designing the first prototype.
+		I used the wrong measurements for the element diameter, even though it seems too work OK when tested, I'm going to rebuild with the correct dimensions.
+		Unfortunately this means I have to go back and redesign the whole thing.
+	</p>
+	<div><div>Image ?: Prototype 6 element yagi.</div><img src="prototype.small.jpg" alt="Prototype 6 element yagi." /></div>
+-->
+
+	<h3>Yagi design</h3>
+	<p>
+		A Yagi-Uda (Yagi) antenna is a directional antenna which is made up of of a dipole element with a reflector and one or more director elements.
+	</p>
+	<div><div>Image ?: Main parts of yagi antenna.</div><img src="./Yagi Design_files/yagi.png" alt="Main parts of a yagi antenna."></div>
+	<p>
+		The Driven Element is a dipole which consists of two 1/4 wavelength elements.
+		The Reflector is slightly bigger then the driven element and reflects the signal back towards the driven element.
+		The Directors are slightly smaller then the driven element with each one being slightly smaller again as they move away from the driven element, the directors help to focus the signal giving it a higher gain.
+		The main gain is directed in the same direction as the arrow.
+	</p>
+	<p>
+		The design of a yagi antenna is much more complex and requires a lot more experimentation then a monopole antenna.
+		I don't believe there is any known simple mathematical formula that can be used to design a yagi antenna.
+		<i>Am I correct?</i>
+	</p>
+	<p>
+		What we do have is a rule of thumb which gives a start pointing when designing a yagi antenna.
+		The idea is to scale up the reflector element by about 5% over the driven element, and to scale down the first director elements by about 5%, and to scale down again by about 5% for each extra director.
+		The spacing between each of the elements would be about 20% of a wavelength, these can also be scaled down for each director.
+	</p>
+	<p>
+		Using this starting point you can adjusted each of the elements lengths and there offsets until you find the best preforming design.
+		These adjustments can be easily and quickly made using antenna design software.
+	</p>
+	<p>
+		The result of a number of days of tweaking lengths and offsets can be found in the following nec file, <a href="gsm-900_6element_yagi.nec">gsm-900_6element_yagi.nec</a>.
+		I also have other nec files for the different gsm bands, <a href="gsm-850_6element_yagi.nec">gsm-550_6element_yagi.nec</a>, <a href="gsm-1800_6element_yagi.nec">gsm-1800_6element_yagi.nec</a> and <a href="gsm-1900_6element_yagi.nec">gsm-1900_6element_yagi.nec</a>.
+	</p>
+	<p>
+		The animated image shows the radiation pattern of the antenna, the gain varies from just under 9 dB to over 10 dB over the frequency range 876 MHz to 960 MHz, covering the three main GSM-900 bands.
+		The design also shows good VSWR (Voltage standing wave ratio) and F/B (Front to back) Ratio.
+	</p>
+	<div><div>Image ?: Animated GSM-900 Yagi Radiation Pattern (876 MHz to 960 MHz).</div><img src="./Yagi Design_files/gsm-900-yagi-radiation-pattern.gif" alt="Animated GSM-900 Yagi Radiation Pattern (876 MHz to 960 MHz)."></div>
+	<p>
+		<i>Some other useful sites with information on yagi design include, <a href="http://www.cebik.com/radio.html">W4RNL - Antenna Articles</a>, 
+		<a href="http://www.ifwtech.co.uk/g3sek/diy-yagi/">GM3SEK - VHF/UHF Long Yagi Workshop</a> and
+		<a href="http://www.k7mem.150m.com/Electronic_Notebook/antennas/yagi_vhf.html">K7MEM - VHF/UHF Yagi Antenna Design</a> (design software written in JavaScript).</i>
+	</p>
+
+	<h3>Construction</h3>
+	<p>
+		There is room for flexibility in the construction techniques you can use.
+		I experimented with different options for the beam including, drilling holes for the elements in wood and plastic (I was disappointed with the accuracy), using a custom printed circuit board (this worked for the <a href="prototype.small.jpg">prototype</a> but would not be suitable for others to build).
+	</p>
+	<p>
+		The technique I will show here uses solid brass rods of the elements and a wooden beam made in two half's.
+		The two half's have small recesses which help hold the elements in place, and everything is permanently held together with strong glue.
+	</p>
+	<div><div>Image ?: Yagi antenna showing each elements label.</div><img src="./Yagi Design_files/yagi-elements.png" alt="Yagi antenna showing each elements label."></div>
+	<table>
+		<caption>Element details and lengths from GSM 900 antenna design</caption>
+		<tbody><tr>
+			<th>Element Label</th>
+			<th>Offset from Ref</th>
+			<th>Element Length</th>
+		</tr>
+		<tr>
+			<td>Ref</td>
+			<td>0 mm</td>
+			<td>171 mm</td>
+		</tr>
+		<tr>
+			<td>DE</td>
+			<td>41 mm</td>
+			<td>149 mm (2 * 74.5 mm)</td>
+		</tr>
+		<tr>
+			<td>D1</td>
+			<td>79 mm</td>
+			<td>132 mm</td>
+		</tr>
+		<tr>
+			<td>D2</td>
+			<td>144 mm</td>
+			<td>127 mm</td>
+		</tr>
+		<tr>
+			<td>D3</td>
+			<td>204 mm</td>
+			<td>120 mm</td>
+		</tr>
+		<tr>
+			<td>D4</td>
+			<td>258 mm</td>
+			<td>114 mm</td>
+		</tr>
+	</tbody></table>
+	<dl>
+		<dt>Materials (<a href="2007-07-18_200906_5657.small.jpg">Image</a>)</dt>
+		<dd>
+			1 @ 3 mm diameter Brass Road 850 mm in length (thick copper wire would be a suitable alternative)<br>
+			2 @ 10 mm rectangular Wooden Batten 400 mm in length<br>
+			1 @ 500 mm length of 50 Ohm coax cable and suitable SMA or N connector (I used <a href="http://www.timesmicrowave.com/wireless/index.shtml">Times Microwave LMR-195</a>)<br>
+			1 @ <a href="gsm-900_6element_yagi_template.pdf">GSM 900 template</a><br>
+			Adhesive tape<br>
+			Epoxy resin adhesive<br>
+			Cable ties<br>
+		</dd>
+		<dt>Tools (<a href="2007-07-19_210056_5771.small.jpg">Image</a>)</dt>
+		<dd>
+			Hacksaw<br>
+			Soldering iron and solder<br>
+			Drill with bits<br>
+			Selection of hand-file's<br>
+			Craft knife<br>
+			Rule and pencil<br>
+			(I would suggest these as the minimum tools but extra would be helpful such as a vice, etc)<br>
+		</dd>
+	</dl>
+	<dl>
+		<dt>Step 1</dt>
+		<dd>
+			To make the elements mark and cut the brass rod into seven pieces the required lengths are given in the table above and on the template sheet.
+			Cut the elements slightly longer then needed and then file the ends down to the correct length.
+			<br>
+			<a href="2007-07-18_204712_5664.small.jpg"><img src="./Yagi Design_files/2007-07-18_204712_5664.thumb.jpg"></a>
+		</dd>
+		<dt>Step 2</dt>
+		<dd>
+			Use the adhesive tape to stick each of the elements in the correct location on the template sheet.
+			The two rods that make up the driven element need to have a small gap between them.
+			<br>
+			<a href="2007-07-18_205750_5667.small.jpg"><img src="./Yagi Design_files/2007-07-18_205750_5667.thumb.jpg"></a>
+			<a href="2007-07-18_205856_5670.small.jpg"><img src="./Yagi Design_files/2007-07-18_205856_5670.thumb.jpg"></a>
+		</dd>
+		<dt>Step 3</dt>
+		<dd>
+			The next step is to make the beam which will hold all the element in the correct position.
+			The idea is to make a recess for each of the elements and then glue them into position.
+			<br>
+			Mark a line for each element, you can use the template as a guide.
+			Saw into the wood about 1 mm in depth.
+			Use a small round file to form a semicircle recess of the element.
+			By making two half's the element can be tightly held in place.
+			<br>
+			<a href="step3.small.jpg"><img src="./Yagi Design_files/step3.thumb.jpg"></a>
+			<a href="2007-07-18_213938_5698.small.jpg"><img src="./Yagi Design_files/2007-07-18_213938_5698.thumb.jpg"></a>
+		</dd>
+		<dt>Step 4</dt>
+		<dd>
+			Drill a hole in the driven element recess in one of the beam parts the same size as the coax cable diameter.
+			Then Feed the coax through the hole.
+			<br>
+			Using the craft knife trim about 15 mm of the plastic insulation from the coax.
+			Unwrap the metal braid, twist and pull to one side, trim the excess and cut away the metal foil layer.
+			Bend the center conductor to the opposite side.
+			Make sure the center conductor doesn't touch the metal braid or metal foil.
+			<br>
+			<a href="2007-07-18_215302_5703.small.jpg"><img src="./Yagi Design_files/2007-07-18_215302_5703.thumb.jpg"></a>
+			<a href="2007-07-18_220952_5713.small.jpg"><img src="./Yagi Design_files/2007-07-18_220952_5713.thumb.jpg"></a>
+		</dd>
+		<dt>Step 5</dt>
+		<dd>
+			File two flat surfaces about 5 mm long at the center of the drive element.
+			Trim the twisted braid and center conductor to the correct length.
+			Solder the twisted braid to one of the drive element rods and the center conductor to the other.
+			Check to made sure that there is no bridged joint between the rods.
+			<br>
+			<a href="2007-07-18_221520_5716.small.jpg"><img src="./Yagi Design_files/2007-07-18_221520_5716.thumb.jpg"></a>
+			<a href="2007-07-18_221546_5717.small.jpg"><img src="./Yagi Design_files/2007-07-18_221546_5717.thumb.jpg"></a>
+			<a href="2007-07-18_222134_5722.small.jpg"><img src="./Yagi Design_files/2007-07-18_222134_5722.thumb.jpg"></a>
+		</dd>
+		<dt>Step 6</dt>
+		<dd>
+			Mix up a small quaintly of the epoxy resin adhesive (follow the manufactures instructions for mixing and setting times).
+			Place some of the adhesive into and coat each of the recesses on the drilled half of the beam.
+			Place extra adhesive around the joint between the drive element rods.
+			With the template on a flat surface, carefully place the drilled half of the beam onto template, use heavy objects to apply pressure while setting.
+			Check that all the elements and beam are correctly positioned and leave to set.
+			<br>
+			<a href="2007-07-18_232128_5728.small.jpg"><img src="./Yagi Design_files/2007-07-18_232128_5728.thumb.jpg"></a>
+		</dd>
+		<dt>Step 7</dt>
+		<dd>
+			Once the adhesive is set, remove the template and carefully remove any extra adhesive which may have accumulated around the elements.
+			<br>
+			<a href="2007-07-18_232618_5730.small.jpg"><img src="./Yagi Design_files/2007-07-18_232618_5730.thumb.jpg"></a>
+			<a href="2007-07-18_232644_5732.small.jpg"><img src="./Yagi Design_files/2007-07-18_232644_5732.thumb.jpg"></a>
+		</dd>
+		<dt>Step 8</dt>
+		<dd>
+			Mix up a larger batch of the epoxy resin adhesive.
+			This time apply a layer of the adhesive to the recesses and the two surfaces of the beams.
+			Apply pressure using heavy objects or clamps, check the positioning and leave to set.
+		</dd>
+		<dt>Step 9</dt>
+		<dd>
+			Once the adhesive is set use the cable ties to secure the coax cable.
+			This forms a strain relief and protects the drive element joints from fatigue.
+			<br>
+			<a href="2007-07-19_090454_5761.small.jpg"><img src="./Yagi Design_files/2007-07-19_090454_5761.thumb.jpg"></a>
+			<a href="2007-07-19_091056_5768.small.jpg"><img src="./Yagi Design_files/2007-07-19_091056_5768.thumb.jpg"></a>
+		</dd>
+	</dl>
+	<div><div>Image ?: The finished GSM-900 6 element yagi.</div><img src="./Yagi Design_files/finished.small.jpg" alt="The finished GSM-900 6 element yagi."></div>
+
+	<h3>Antenna testing</h3>
+	<p>
+		The following image (from a USRP) shows the difference between the monopole antenna and the yagi antenna for a weak BTS signal at 937.8 MHz.
+		The monopole is on the left and the yagi on the right.
+	</p>
+	<div><div>Image ?: Monopole vs Yagi, 937.8 MHz.</div><a href="./Yagi Design_files/usrp_937.8.png"><img src="./Yagi Design_files/usrp_937.8.png" alt="Monopole vs Yagi, 937.8 MHz." width="480"></a></div>
+	<p>
+		From looking at the image I would suggest that in this test the yagi has between 4 and 6 dB gain over the monopole antenna.
+		I think the main improvement is shown in the directionality.
+		In the upper left a large signal is shown at about 1.2 MHz above the center frequency, in the upper right image this BTS signal is attenuated by about 15 dB.
+		Though the signal at about 1.6 MHz seems to have had an increase in gain with the yagi antenna.
+	</p>
+
+	<div><div>Image ?: Monopole vs Yagi, 941 MHz.</div><a href="./Yagi Design_files/usrp_941.png"><img src="./Yagi Design_files/usrp_941.png" alt="Monopole vs Yagi, 941 MHz." width="480"></a></div>
+	<p>
+		The test in Image ? shows a local strong BTS signal but there is no noticeable improvement in the signal strength.
+	</p>
+
+	<div><div>Image ?: Monopole vs Yagi, 953.6 MHz.</div><a href="./Yagi Design_files/usrp_953.6.png"><img src="./Yagi Design_files/usrp_953.6.png" alt="Monopole vs Yagi, 953.6 MHz." width="480"></a></div>
+	<p>
+		The test in Image ? shows another BTS with a small improvement in signal gain, but quite a marked improvement with 4 BTS signals being significantly attenuated.
+	</p>
+	<p>
+		For an absolute gain test you would need a signal generator, field strength meter and an RF shielded environment, which I don't have access to.
+		Another option would be to do a test outside with clear light of sight between the test antenna and the BTS, I might look into this at some point.
+	</p>
+
+	<h3>Templates for other frequency's</h3>
+	<p>
+		Europe, Middle East, Africa and most of Asia<br>
+		<a href="gsm-900_6element_yagi_template.pdf">GSM 900 template</a><br>
+		<a href="gsm-1800_6element_yagi_template.pdf">GSM 1800 template</a><br>
+	</p>
+	<p>
+		Americas<br>
+		<a href="gsm-850_6element_yagi_template.pdf">GSM 850 template</a><br>
+		<a href="gsm-1900_6element_yagi_template.pdf">GSM 1900 template</a><br>
+	</p>
+	<p>
+		All templates should print fine on ISO A4 or US Legal sized paper.
+	</p>
+
+	<h3>Conclusion</h3>
+	<p>
+		The construction is relatively straight forward requiring only minimal materials and tools.
+		I think this yagi antenna design offers some real advantages over the monopole antenna design or simple wire antenna.
+	</p>
+
+	<br>
+	<center><a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/">Back to Designing and building a GSM antenna</a> - <a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/monopole/">Monopole Design</a></center>
+	<br>
+	<center>Last updated 2007-07-26.  Copyright © 2007 Robert Fitzsimons.  robfitz at 273k dot net</center>
+	<center><script type="text/javascript"><!--
+google_ad_client = "pub-2911513822197842";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+//2007-04-03: 273k gsm leaderboard
+google_ad_channel = "4578813361";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<script src="./Yagi Design_files/ga.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1221560-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+</body></html>

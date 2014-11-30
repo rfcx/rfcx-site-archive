@@ -1,0 +1,171 @@
+
+<!-- saved from url=(0066) http://273k.net/gsm/designing-and-building-a-gsm-antenna/monopole/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Monopole Design</title>
+<style type="text/css"></style></head>
+<body bgcolor="#FFFFFF" class=" hasGoogleVoiceExt">
+	<h1>Monopole Design</h1>
+
+<div style="float: right;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-2911513822197842";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+//2007-07-02: 273k gsm widesky
+google_ad_channel = "8009354766";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+	<center><a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/">Back to Designing and building a GSM antenna</a> - <a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/yagi/">Yagi Design</a></center>
+
+	<h3>The design</h3>
+	<p>
+		A monopole antenna consists of a 1/4 wavelength vertical element over a solid sheet or radial wire ground plane with diameter of at least 1/4 wavelength.
+		It is a omnidirectional antenna which has the same gain in every direction.
+	</p>
+	<div><div>Image 1: Two different styles of monopole antenna (solid sheet and radial wire ground plane).</div><img src="./Monopole Design_files/monopole.png" alt="Two different styles of monopole antenna."></div>
+	<p>
+
+		I used a version of the Numerical Electromagnetics Code (<a href="http://www.nec2.org/">NEC2</a>) antenna modelling software to help with designing my antenna.
+		In particular I used <a href="http://5b4az.chronos.org.uk/pages/nec2.html">xnec2c</a>, which is written in C and has graphical user interface written in GTK+.
+	</p>
+	<div><div>Image 2: xnec2c screen shot showing different views and information for the GSM-900 monopole antenna.</div><a href="xnec2c_monopole_large.png"><img src="./Monopole Design_files/xnec2c_monopole.png" alt="Screen shot of monopole antenna in xnec2c."></a></div>
+	<p>
+		A NEC2 program takes as it's input a text files which can contain very detailed information about a given antenna design.
+		This input is then processed using a number of different algorithms and a text file is produced which contains various low level information about how the signal and antenna have interacted.
+		The output data can then be viewed in a number of different ways that allows the user to evaluate the results.
+	</p>
+	<p>
+		The input file I used in my design is available at <a href="gsm-900_monopole.nec">gsm-900_monopole.nec</a>.
+	</p>
+	<p>
+		The final GSM-900 monopole antenna design is as follows, a 77.5 mm long 3 mm diameter element coming out of the center of a 200 mm by 200 mm solid metal sheet.
+
+	</p>
+
+	<h3>Construction</h3>
+	<dl>
+		<dt>Materials (<a href="2007-06-29_211414_5337.small.jpg">Image</a>)</dt>
+		<dd>
+			1 @ 3 mm diameter Brass Rod 100 mm in length (thick copper wire would be a suitable alternative)<br>
+			1 @ 200 mm by 200 mm Copper Sheet (a biscuit tin lid or piece of PCB board would be a suitable alternative)<br>
+			1 @ N-Type Panel Receptacle Jack (<a href="http://www.amphenolconnex.com/SearchResults.asp?ProductID=444">Amphenol Connex Panel Receptacle Jack - Solder Pot Terminal</a> or similar) <a href="2007-06-30_141544_5420.small.jpg"><img src="./Monopole Design_files/2007-06-30_141544_5420.thumb.jpg"></a><br>
+			4 @ Small Nuts and Bolts (some small washers may also be needed)<br>
+		</dd>
+		<dt>Tools (<a href="2007-06-29_211216_5333.small.jpg">Image</a>)</dt>
+		<dd>
+			Hacksaw<br>
+			Sheet metal shears or jigsaw<br>
+			Soldering iron and solder<br>
+			Drill with bits<br>
+			Selection of hand-file's<br>
+			Rule and pencil<br>
+			Suitable screwdriver and/or pliers for nuts and bolts<br>
+			(I would suggest these as the minimum tools but extra would be helpful such as a vice, etc)<br>
+		</dd>
+	</dl>
+	<dl>
+		<dt>Step 1</dt>
+		<dd>
+			Mark and cut the metal sheet to size approximately 200 mm by 200 mm, anything over 160 mm by 160 mm should be fine.
+			Use the file to clean up any sharp edges.
+			<br>
+			<a href="2007-06-29_211830_5341.small.jpg"><img src="./Monopole Design_files/2007-06-29_211830_5341.thumb.jpg"></a>
+		</dd>
+		<dt>Step 2</dt>
+		<dd>
+			Mark the center of the sheet and drill a suitable sized hole so the sheet rests flat on the connector.
+			Place the connector in the hole and use your pencil to mark the center of each of the mounting holes.
+			Drill the holes to a suitable size for your mounting bolts.
+			<br>
+			<a href="2007-06-29_222626_5361.small.jpg"><img src="./Monopole Design_files/2007-06-29_222626_5361.thumb.jpg"></a>
+		</dd>
+		<dt>Step 3</dt>
+		<dd>
+			Using the hand-files shape the end of rod so it fits neatly into the solder cup on the connector.
+			Solder the rod to the solder cup, try and make sure the rod is as straight as possible.
+			<br>
+			<a href="2007-06-29_225238_5372.small.jpg"><img src="./Monopole Design_files/2007-06-29_225238_5372.thumb.jpg"></a>
+		</dd>
+		<dt>Step 4</dt>
+		<dd>
+			Using your ruler and pencil mark a length of 78 mm along the rod, cut just above this mark with your hacksaw.
+			Now using the hand-file carefully file down the the length of the rod until it's length is 77.5 mm.
+			<br>
+			<a href="2007-06-29_231252_5378.small.jpg"><img src="./Monopole Design_files/2007-06-29_231252_5378.thumb.jpg"></a>
+		</dd>
+		<dt>Step 5</dt>
+		<dd>
+			Mount the element connector on the sheet with the nuts and bolts.
+			<br>
+			<a href="2007-06-29_233516_5390.small.jpg"><img src="./Monopole Design_files/2007-06-29_233516_5390.thumb.jpg"></a>
+		</dd>
+	</dl>
+	<div><div>Image ?: The finished monopole antenna.</div><img src="./Monopole Design_files/2007-06-29_233230_5382.small.jpg" alt="The finished monopole antenna."></div>
+
+	<h3>Antenna testing</h3>
+	<p>
+		Using <a href="http://www.amphenolconnex.com/SearchResults.asp?ProductID=444">Amphenol Connex SMA Plug/N Plug</a> (or pigtail) adapter I carefully mounted the antenna on my <a href="http://www.ettus.com/">USRP</a> (<a href="http://www.gnuradio.org/">GnuRadio</a>).
+		I then tuned my USRP to the frequency of a strong GSM base stations (see <a href="http://273k.net/gsm/find-a-gsm-base-station-manually-using-a-usrp">Find a GSM base station manually using a USRP"</a>).
+		Using the usrp_fft.py program and in the averaging mode I took a number of screen shots of each test.
+		<br>
+		<a href="2007-06-30_141220_5415.small.jpg"><img src="./Monopole Design_files/2007-06-30_141220_5415.thumb.jpg"></a>
+		<a href="2007-06-30_141026_5412.small.jpg"><img src="./Monopole Design_files/2007-06-30_141026_5412.thumb.jpg"></a>
+		<a href="2007-06-30_141630_5424.small.jpg"><img src="./Monopole Design_files/2007-06-30_141630_5424.thumb.jpg"></a>
+		<a href="2007-06-30_141714_5426.small.jpg"><img src="./Monopole Design_files/2007-06-30_141714_5426.thumb.jpg"></a>
+	</p>
+
+	<div><div>Image ?: USRP 941 MHz 16 decimation, No antenna, Wire antenna, Monopole antenna.</div><a href="usrp_941_16_large.png"><img src="./Monopole Design_files/usrp_941_16.png" alt="USRP 941 MHz 16 decimation, No antenna, Wire antenna, Monopole antenna."></a></div>
+	<p>
+		These screen shots show tests with, no antenna, a roughly cut piece of 1/4 wavelength wire, and the monopole antenna.
+		There is only a minimal difference between the piece of wire and the monopole antenna, mostly it's a reduction in the noise value and doesn't effect the signal strength.
+	</p>
+
+	<div><div>Image ?: USRP 941 MHz 112 decimation, Wire antenna, Monopole antenna.</div><a href="usrp_941_112_large.png"><img src="./Monopole Design_files/usrp_941_112.png" alt="USRP 941 MHz 112 decimation, Wire antenna, Monopole antenna."></a></div>
+	<p>
+		Screen shots of a single GSM channel ~200 kHz, there is also no noticeable difference between between the two screen shots.
+	</p>
+
+	<div><div>Image ?: USRP 947.4 MHz 112 decimation weak signal, Wire antenna, Monopole antenna.</div><a href="usrp_947.4_112_large.png"><img src="./Monopole Design_files/usrp_947.4_112.png" alt="USRP 947.4 MHz 112 decimation weak signal, Wire antenna, Monopole antenna."></a></div>
+	<p>
+		Screen shots of a single GSM channel ~200 kHz from a weaker GSM base station, there is also no noticeable difference between between the two screen shots.
+	</p>
+
+	<h3>Conclusion</h3>
+	<p>
+		This is very interesting in these tests it seems that there is little or no benefit in building a monopole antenna over using a 1/4 wavelength piece of wire.
+	</p>
+
+	<br>
+	<center><a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/">Back to Designing and building a GSM antenna</a> - <a href="http://273k.net/gsm/designing-and-building-a-gsm-antenna/yagi/">Yagi Design</a></center>
+	<br>
+	<center>Last updated 2007-07-22.  Copyright © 2007 Robert Fitzsimons.  robfitz at 273k dot net</center>
+	<center><script type="text/javascript"><!--
+google_ad_client = "pub-2911513822197842";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+//2007-04-03: 273k gsm leaderboard
+google_ad_channel = "4578813361";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<script src="./Monopole Design_files/ga.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1221560-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+</body></html>
